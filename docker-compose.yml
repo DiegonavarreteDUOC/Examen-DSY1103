@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    restart: on-failure
+  usuario-service:
+    build: ./usuario-service
+    ports:
+      - "8081:8081"
+    restart: on-failure
+  producto-service:
+    build: ./producto-service
+    ports:
+      - "8082:8082"
+    restart: on-failure
+  inventario-service:
+    build: ./inventario-service
+    ports:
+      - "8083:8083"
+    restart: on-failure
+  carrito-service:
+    build: ./carrito-service
+    ports:
+      - "8084:8084"
+    restart: on-failure
+  pedido-service:
+    build: ./pedido-service
+    ports:
+      - "8085:8085"
+    restart: on-failure
+  pago-service:
+    build: ./pago-service
+    ports:
+      - "8086:8086"
+    restart: on-failure
+  reparto-service:
+    build: ./reparto-service
+    ports:
+      - "8087:8087"
+    restart: on-failure
+  promocion-service:
+    build: ./promocion-service
+    ports:
+      - "8088:8088"
+    restart: on-failure
+  devolucion-service:
+    build: ./devolucion-service
+    ports:
+      - "8089:8089"
+    restart: on-failure
+  reporte-service:
+    build: ./reporte-service
+    ports:
+      - "8090:8090"
+    restart: on-failure
