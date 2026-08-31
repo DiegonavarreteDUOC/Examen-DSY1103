@@ -5,9 +5,12 @@ import cl.duoc.eft.producto.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/productos")
 public class ProductoController {
@@ -28,12 +31,12 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<Producto> create(@RequestBody Producto entity) {
+    public ResponseEntity<Producto> create(@Valid @RequestBody Producto entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> update(@PathVariable Long id, @RequestBody Producto entity) {
+    public ResponseEntity<Producto> update(@PathVariable Long id, @Valid @RequestBody Producto entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

@@ -5,9 +5,12 @@ import cl.duoc.eft.pago.service.PagoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/pagos")
 public class PagoController {
@@ -28,12 +31,12 @@ public class PagoController {
     }
 
     @PostMapping
-    public ResponseEntity<Pago> create(@RequestBody Pago entity) {
+    public ResponseEntity<Pago> create(@Valid @RequestBody Pago entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pago> update(@PathVariable Long id, @RequestBody Pago entity) {
+    public ResponseEntity<Pago> update(@PathVariable Long id, @Valid @RequestBody Pago entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

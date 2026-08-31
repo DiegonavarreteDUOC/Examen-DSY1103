@@ -4,10 +4,12 @@ import cl.duoc.eft.pedido.model.Pedido;
 import cl.duoc.eft.pedido.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class PedidoService {
 
@@ -19,6 +21,7 @@ public class PedidoService {
     }
 
     public Optional<Pedido> findById(Long id) {
+        log.info("Buscando registro por ID: {}", id);
         return repository.findById(id);
     }
 

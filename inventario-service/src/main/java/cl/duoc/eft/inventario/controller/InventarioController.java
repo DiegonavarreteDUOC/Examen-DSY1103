@@ -5,9 +5,12 @@ import cl.duoc.eft.inventario.service.InventarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/inventarios")
 public class InventarioController {
@@ -28,12 +31,12 @@ public class InventarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Inventario> create(@RequestBody Inventario entity) {
+    public ResponseEntity<Inventario> create(@Valid @RequestBody Inventario entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Inventario> update(@PathVariable Long id, @RequestBody Inventario entity) {
+    public ResponseEntity<Inventario> update(@PathVariable Long id, @Valid @RequestBody Inventario entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

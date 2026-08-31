@@ -5,9 +5,12 @@ import cl.duoc.eft.reparto.service.RepartoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/repartos")
 public class RepartoController {
@@ -28,12 +31,12 @@ public class RepartoController {
     }
 
     @PostMapping
-    public ResponseEntity<Reparto> create(@RequestBody Reparto entity) {
+    public ResponseEntity<Reparto> create(@Valid @RequestBody Reparto entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Reparto> update(@PathVariable Long id, @RequestBody Reparto entity) {
+    public ResponseEntity<Reparto> update(@PathVariable Long id, @Valid @RequestBody Reparto entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

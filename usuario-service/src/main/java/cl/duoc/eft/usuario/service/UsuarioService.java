@@ -4,10 +4,12 @@ import cl.duoc.eft.usuario.model.Usuario;
 import cl.duoc.eft.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class UsuarioService {
 
@@ -19,6 +21,7 @@ public class UsuarioService {
     }
 
     public Optional<Usuario> findById(Long id) {
+        log.info("Buscando registro por ID: {}", id);
         return repository.findById(id);
     }
 

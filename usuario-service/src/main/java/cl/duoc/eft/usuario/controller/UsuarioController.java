@@ -5,9 +5,12 @@ import cl.duoc.eft.usuario.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -28,12 +31,12 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> create(@RequestBody Usuario entity) {
+    public ResponseEntity<Usuario> create(@Valid @RequestBody Usuario entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> update(@PathVariable Long id, @RequestBody Usuario entity) {
+    public ResponseEntity<Usuario> update(@PathVariable Long id, @Valid @RequestBody Usuario entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

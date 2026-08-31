@@ -5,9 +5,12 @@ import cl.duoc.eft.promocion.service.PromocionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/promocions")
 public class PromocionController {
@@ -28,12 +31,12 @@ public class PromocionController {
     }
 
     @PostMapping
-    public ResponseEntity<Promocion> create(@RequestBody Promocion entity) {
+    public ResponseEntity<Promocion> create(@Valid @RequestBody Promocion entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Promocion> update(@PathVariable Long id, @RequestBody Promocion entity) {
+    public ResponseEntity<Promocion> update(@PathVariable Long id, @Valid @RequestBody Promocion entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));

@@ -5,9 +5,12 @@ import cl.duoc.eft.pedido.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/pedidos")
 public class PedidoController {
@@ -28,12 +31,12 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<Pedido> create(@RequestBody Pedido entity) {
+    public ResponseEntity<Pedido> create(@Valid @RequestBody Pedido entity) {
         return ResponseEntity.ok(service.save(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pedido> update(@PathVariable Long id, @RequestBody Pedido entity) {
+    public ResponseEntity<Pedido> update(@PathVariable Long id, @Valid @RequestBody Pedido entity) {
         return service.findById(id).map(existing -> {
             entity.setId(existing.getId());
             return ResponseEntity.ok(service.save(entity));
