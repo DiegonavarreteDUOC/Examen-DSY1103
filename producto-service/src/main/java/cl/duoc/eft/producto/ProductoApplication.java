@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.producto;
+package cl.duoc.eft.producto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

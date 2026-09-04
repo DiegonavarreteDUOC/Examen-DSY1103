@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.reporte;
+package cl.duoc.eft.reporte;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

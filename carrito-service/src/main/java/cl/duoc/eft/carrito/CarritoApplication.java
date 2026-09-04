@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.carrito;
+package cl.duoc.eft.carrito;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

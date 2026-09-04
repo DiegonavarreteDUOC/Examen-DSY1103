@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.apigateway;
+package cl.duoc.eft.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

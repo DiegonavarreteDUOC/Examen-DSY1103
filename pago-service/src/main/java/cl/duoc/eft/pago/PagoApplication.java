@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.pago;
+package cl.duoc.eft.pago;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

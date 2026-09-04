@@ -1,4 +1,4 @@
-﻿server:
+server:
   port: 8083 # random port for local dev or configured by gateway
 spring:
   application:

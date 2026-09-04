@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.inventario;
+package cl.duoc.eft.inventario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

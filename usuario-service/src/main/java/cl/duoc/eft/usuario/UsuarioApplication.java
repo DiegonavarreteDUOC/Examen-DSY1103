@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.usuario;
+package cl.duoc.eft.usuario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

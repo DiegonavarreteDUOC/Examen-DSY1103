@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.reparto;
+package cl.duoc.eft.reparto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

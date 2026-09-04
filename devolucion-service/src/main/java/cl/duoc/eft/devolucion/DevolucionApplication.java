@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.devolucion;
+package cl.duoc.eft.devolucion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

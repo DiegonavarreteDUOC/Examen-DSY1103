@@ -1,4 +1,4 @@
-﻿package cl.duoc.eft.promocion;
+package cl.duoc.eft.promocion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
