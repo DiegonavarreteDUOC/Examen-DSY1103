@@ -5,7 +5,7 @@ Este proyecto consiste en el desarrollo del backend de un sistema de pedidos y r
 
 La solución está construida sobre una **Arquitectura de Microservicios** utilizando **Spring Boot**, integrando base de datos relacional (JPA/Hibernate), validaciones, manejo centralizado de excepciones y documentación formal (Swagger/OpenAPI).
 
-## Nombres de los/las estudiantes
+## Nombre estudiante
 - Diego Navarrete
 
 ## Listado de Microservicios Implementados
